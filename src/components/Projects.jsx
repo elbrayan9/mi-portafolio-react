@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Section from "./Section";
 import { projects } from "../data.js";
 import ProjectCard from "./ProjectCard"; // Importamos la tarjeta
+import ProjectModal from "./ProjectModal";
 
 function Projects({ activeFilter }) {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const filteredProjects =
     activeFilter === "all"
       ? projects
@@ -15,9 +19,19 @@ function Projects({ activeFilter }) {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredProjects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+            onClick={() => setSelectedProject(project)}
+          />
         ))}
       </div>
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </Section>
   );
 }

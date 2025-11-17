@@ -24,7 +24,7 @@ export const projects = [
     description:
       "Completa SPA de gestión de negocios con autenticación por roles, CRUD, y un chatbot con IA integrado (Google Gemini).",
     // Las imágenes ahora apuntan a la carpeta /public
-    image: "/images/473shots_so.png",
+    image: "images/473shots_so.png",
     tags: ["React", "Firebase", "Tailwind CSS"],
     liveUrl: "https://khaleesisystem.com.ar/",
     repoUrl: "https://github.com/elbrayan9/Khaleesi-System1",
@@ -33,7 +33,7 @@ export const projects = [
     title: "Tienda Online con JS Puro",
     description:
       "E-commerce interactivo construido sin frameworks, demostrando un sólido dominio de la manipulación del DOM y el localStorage.",
-    image: "/images/480shots_so.png",
+    image: "images/480shots_so.png",
     tags: ["JavaScript", "HTML5", "CSS3"],
     liveUrl: "https://elbrayan9.github.io/tienda-online/",
     repoUrl: "https://github.com/elbrayan9/tienda-online",
@@ -42,7 +42,7 @@ export const projects = [
     title: "E-commerce Autoadministrable",
     description:
       "Tienda online con catálogo, carrito y panel de administración protegido para la gestión completa (CRUD) de productos.",
-    image: "/images/665shots_so.png",
+    image: "images/665shots_so.png",
     tags: ["Next.js", "React", "Firebase"],
     liveUrl: "https://mi-tienda-coder.vercel.app/",
     repoUrl: "https://github.com/elbrayan9/mi-tienda-coder",
@@ -69,7 +69,7 @@ export const projects = [
     description:
       "Backend robusto con arquitectura de 3 capas (Controller, Service, Repository) para un sistema de facturación.",
     // DEBES REEMPLAZAR ESTA IMAGEN
-    image: "/images/java-api-placeholder.png", // <-- ¡REEMPLAZA ESTO!
+    image: "images/java-api-placeholder.png", // <-- ¡REEMPLAZA ESTO!
     tags: ["Java", "Spring Boot"],
     liveUrl: "#",
     repoUrl:
