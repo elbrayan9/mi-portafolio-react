@@ -68,8 +68,7 @@ export const projects = [
     title: "API de Facturación con Java",
     description:
       "Backend robusto con arquitectura de 3 capas (Controller, Service, Repository) para un sistema de facturación.",
-    // DEBES REEMPLAZAR ESTA IMAGEN
-    image: "images/java-api-placeholder.png", // <-- ¡REEMPLAZA ESTO!
+    image: "images/java-api-placeholder.png",
     tags: ["Java", "Spring Boot"],
     liveUrl: "#",
     repoUrl:
