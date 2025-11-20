@@ -4,7 +4,7 @@
 
 No es solo una galería de proyectos, sino también una demostración de mis habilidades de desarrollo frontend y componentización.
 
-**[Ver Demo en Vivo](https*://brianoviedo.dev)**
+**[Ver Demo en Vivo](https://elbrayan9.github.io/mi-portafolio-react/)**
 
 ---
 
