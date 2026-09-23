@@ -6,3 +6,36 @@
 body {
   @apply bg-bg-color text-text-color font-body;
 }
+
+@layer components {
+  .terminal-panel { @apply bg-terminal-bg border border-[#444] rounded-lg; }
+  .action { @apply inline-flex items-center justify-center border border-[#777] rounded px-4 py-2 text-sm font-semibold text-text-color; min-height: 44px; }
+  .action:hover { @apply border-primary-color; }
+  .action.primary { @apply bg-primary-color text-terminal-bg border-primary-color; }
+  .section-title { @apply text-3xl md:text-4xl font-bold text-primary-color mb-6; overflow-wrap: anywhere; }
+  .cv-heading { @apply text-xl font-bold text-primary-color mt-6 mb-3; }
+}
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+:focus-visible { outline: 3px solid #33ff33; outline-offset: 5px; }
+section { scroll-margin-top: 1rem; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; transform: translateY(-200%); z-index: 100; padding: 1rem; background: #33ff33; color: #0d0d0d; }
+.skip-link:focus { transform: translateY(0); }
+.project-dialog { color: #e0e0e0; background: #0d0d0d; border: 1px solid #777; border-radius: 0.75rem; width: min(90vw, 56rem); max-height: 90vh; padding: 0; }
+.project-dialog::backdrop { background: rgb(0 0 0 / 85%); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  @page { margin: 15mm; }
+  body { background: white; color: black; font-size: 10pt; }
+  .skip-link, main > :not(#cv), .print-controls { display: none !important; }
+  #cv { max-width: none; padding: 0; margin: 0; }
+  .cv-document { padding: 0; border: 0; background: white; }
+  #cv * { color: black !important; }
+  #cv h2 { font-size: 22pt; }
+  #cv h3 { font-size: 13pt; break-after: avoid; }
+  .cv-project, .cv-entry { break-inside: avoid; }
+  #cv a { overflow-wrap: anywhere; }
+}

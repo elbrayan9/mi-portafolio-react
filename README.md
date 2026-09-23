@@ -1,80 +1,51 @@
-# Mi Portafolio Personal (React + Tailwind)
+# Brian Oviedo · Portafolio profesional
 
-¡Bienvenido a mi portafolio personal! Este proyecto fue construido desde cero con **React**, **Vite** y **Tailwind CSS**, migrando la versión original de HTML/CSS/JS para crear una experiencia de usuario más moderna, interactiva y mantenible.
+Portafolio con estética terminal construido con React 19, Vite 7 y Tailwind CSS 3.
 
-No es solo una galería de proyectos, sino también una demostración de mis habilidades de desarrollo frontend y componentización.
+## Desarrollo local
 
-**[Ver Demo en Vivo](https://elbrayan9.github.io/mi-portafolio-react/)**
+Requiere Node.js 20.19+ o 22.12+ compatible con Vite 7.
 
----
+```bash
+npm ci
+npm run dev
+npm run lint
+npm run build
+npm run preview
+```
 
-## 🚀 Características
+Vite utiliza la base /mi-portafolio-react/. Abrí la dirección del servidor con esa ruta. La compilación se genera en dist/.
 
-- **Terminal Interactiva:** Una terminal simulada (`Hero.jsx`) que recibe comandos (`ayuda`, `proyectos`, `contacto`, etc.) para navegar por el sitio, construida con hooks de React (`useState`, `useEffect`).
-- **Filtrado Dinámico de Proyectos:** La galería de proyectos se puede filtrar instantáneamente por tecnología. El estado se gestiona en `App.jsx` y se comparte entre los componentes `Skills.jsx` y `Projects.jsx`.
-- **Componentización:** Todo el sitio está dividido en componentes reutilizables (como `Section.jsx` y `ProjectCard.jsx`) para un código más limpio.
-- **Animaciones de Scroll:** Efectos sutiles de aparición al hacer scroll, implementados eficientemente usando `IntersectionObserver` en el componente `Section.jsx`.
-- **Diseño 100% Responsivo:** Creado con un enfoque _utility-first_ de Tailwind CSS, adaptándose perfectamente a móviles, tablets y escritorio.
+## Contenido y edición
 
----
+- src/data.js: casos, tecnologías, capacidades y datos compartidos con el CV.
+- Hero.jsx: presentación, CTA y comandos ayuda, sobremi, capacidades, proyectos, habilidades, cv, contacto y limpiar.
+- Skills.jsx y Projects.jsx: filtros por tecnología, botón Todas y recuento.
+- ProjectCard.jsx, ProjectModal.jsx y ProjectLinks.jsx: problema, solución, stack y enlaces. Un liveUrl ausente o igual a # no genera un enlace de demo. Los backends muestran sólo GitHub.
+- CV.jsx: CV web en #cv. El botón “Imprimir / Guardar PDF” abre la impresión del navegador; elegir “Guardar como PDF” permite descargarlo sin servicios externos.
+- src/index.css: estilos terminal, foco visible, movimiento reducido e impresión exclusiva del CV.
+- index.html: español, metadatos sociales y favicon terminal. La imagen social es la captura existente de Khaleesi System.
 
-## 💻 Stack Tecnológico
+## Fuentes y límites editoriales
 
-Este proyecto fue construido usando tecnologías modernas de frontend:
+Los cinco casos se basan en las descripciones, stacks y enlaces originales de src/data.js. Los problemas expresan objetivos técnicos; no son testimonios de clientes ni resultados medidos.
 
-- **React:** Para una interfaz de usuario componentizada y declarativa.
-- **Vite:** Para un entorno de desarrollo y compilación ultrarrápido.
-- **Tailwind CSS:** Para un diseño _utility-first_ y altamente personalizable.
-- **JavaScript (ES6+):** Para toda la lógica interactiva y manipulación de estado.
-- **Desplegado en:** Vercel / Netlify (¡o donde prefieras!)
+El perfil, experiencia, educación e idiomas provienen del CV entregado por Brian Oviedo. Se incorporan datos aportados por el titular sin agregar métricas, fechas ni certificaciones no presentes en la fuente.
 
----
+Margen se incluye por solicitud del titular como referencia pendiente de documentación. Este repositorio no contiene evidencia de sus funciones, stack, capturas o URL: no se inventan y no se incluye en el CV como caso documentado. Para completarlo, agregar primero información verificable.
 
-## 🛠️ Cómo ejecutar este proyecto localmente
+Los metadatos usan la URL de homepage en package.json. Los enlaces externos son referencias preexistentes; no se certifica su disponibilidad actual. Si cambia el dominio, actualizar metadatos y base de Vite.
 
-Si deseas clonar y ejecutar este proyecto en tu máquina local, sigue estos pasos:
+## Accesibilidad y validación
 
-1.  **Clona el repositorio:**
+Enlace para saltar a proyectos, controles nativos, etiquetas de formulario y foco visible. El modal usa dialog: Escape, foco contenido y restauración al control de origen. Los filtros exponen aria-pressed y anuncian el recuento.
 
-    ```bash
-    git clone [https://github.com/elbrayan9/mi-portafolio-react.git](https://github.com/elbrayan9/mi-portafolio-react.git)
-    ```
+Revisión manual: probar a 320, 768 y 1440 px, recorrer con Tab, abrir y cerrar casos, usar filtros y comandos, revisar impresión y guardar PDF.
 
-2.  **Navega al directorio:**
+Ejecutar lint y build antes de entregar cambios. No hay suite de tests automatizados configurada.
 
-    ```bash
-    cd mi-portafolio-react
-    ```
+## Contacto
 
-3.  **Instala las dependencias:**
-
-    ```bash
-    npm install
-    ```
-
-4.  **Inicia el servidor de desarrollo:**
-    ```bash
-    npm run dev
-    ```
-    ¡Abre [http://localhost:5173](http://localhost:5173) (o el puerto que indique Vite) en tu navegador!
-
----
-
-## 🌟 Proyectos Destacados (Datos)
-
-Este portafolio muestra mi "Arsenal Tecnológico", incluyendo:
-
-- **Khaleesi System:** Una SPA de gestión de negocios con autenticación, CRUD y un chatbot de IA (React, Firebase).
-- **E-commerce Autoadministrable:** Una tienda online completa con panel de administración (Next.js, Firebase).
-- **Backend de E-commerce:** Una API REST robusta con arquitectura en capas (DAO, DTO, Repository), autenticación JWT, tests de integración (Mocha/Chai) y documentación con Swagger (Node.js, Express, MongoDB, Docker).
-- **API de Facturación:** Un backend con arquitectura de 3 capas (Java, Spring Boot).
-
----
-
-## 🔗 ¡Conectemos!
-
-Siempre estoy abierto a nuevas oportunidades y colaboraciones.
-
-- **LinkedIn:** [https://www.linkedin.com/in/brian-oviedo-1a04ba262/](https://www.linkedin.com/in/brian-oviedo-1a04ba262/)
-- **GitHub:** [https://github.com/elbrayan9](https://github.com/elbrayan9)
-- **Email:** brianoviedo14@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/brian-oviedo-1a04ba262/)
+- [GitHub](https://github.com/elbrayan9)
+- [Email](mailto:brianoviedo14@gmail.com)

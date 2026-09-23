@@ -8,7 +8,7 @@ export default {
         "terminal-bg": "#0d0d0d",
         "text-color": "#e0e0e0",
         "primary-color": "#33FF33",
-        "secondary-color": "#888",
+        "secondary-color": "#b0b0b0",
         keyframes: {
           fadeIn: {
             "0%": { opacity: "0" },

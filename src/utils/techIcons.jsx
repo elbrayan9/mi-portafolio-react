@@ -6,7 +6,6 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaDocker,
-  FaGitAlt,
 } from "react-icons/fa";
 import {
   SiSpringboot,
