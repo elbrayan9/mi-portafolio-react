@@ -1,23 +1,37 @@
-import { getTechIcon } from "../utils/techIcons"; // Importamos para mostrar iconos pequeños si quieres
+import { motion as Motion, useReducedMotion } from "motion/react";
 
 function ProjectCard({ project, onClick }) {
   const { title, description, image, tags } = project;
+  const prefersReducedMotion = useReducedMotion();
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick();
+    }
+  };
 
   return (
-    <div
-      onClick={onClick} // <-- Evento click en toda la tarjeta
-      className="group bg-[#222] rounded-lg overflow-hidden border border-[#444] 
-                 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary-color/50 cursor-pointer flex flex-col h-full"
+    <Motion.div
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      whileHover={prefersReducedMotion ? undefined : { y: -4 }}
+      transition={{ duration: 0.2 }}
+      className="group bg-[#222] rounded-lg overflow-hidden border border-[#444]
+                 transition-[box-shadow,border-color] duration-300 motion-reduce:transition-none hover:shadow-2xl hover:border-primary-color/50 cursor-pointer flex flex-col h-full
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-color focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a1a]"
     >
       {/* Contenedor de Imagen con efecto zoom */}
       <div className="overflow-hidden h-52 relative">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover duration-500 motion-safe:transition-transform motion-safe:group-hover:scale-110 motion-reduce:transition-none"
         />
-        {/* Overlay que aparece al pasar el mouse */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        {/* Overlay que aparece al pasar el mouse o al enfocar la tarjeta con el teclado */}
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-white font-semibold border border-white px-4 py-2 rounded-full backdrop-blur-sm">
             Ver Detalles
           </span>
@@ -49,7 +63,7 @@ function ProjectCard({ project, onClick }) {
           )}
         </div>
       </div>
-    </div>
+    </Motion.div>
   );
 }
 

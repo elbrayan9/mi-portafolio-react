@@ -50,11 +50,14 @@ function Hero() {
           setLines((prev) => [...prev, { ...line, text: line.text.charAt(0) }]);
         } else {
           // --- Si NO es el primer carácter ---
-          // Actualiza la ÚLTIMA línea del array añadiendo el nuevo carácter
+          // Actualiza la ÚLTIMA línea del array añadiendo el nuevo carácter, de forma inmutable
           setLines((prev) => {
-            const newLines = [...prev];
-            newLines[newLines.length - 1].text += line.text.charAt(charIndex);
-            return newLines;
+            const lastLine = prev[prev.length - 1];
+            const updatedLine = {
+              ...lastLine,
+              text: lastLine.text + line.text.charAt(charIndex),
+            };
+            return [...prev.slice(0, -1), updatedLine];
           });
         }
 
@@ -65,10 +68,8 @@ function Hero() {
       typeChar(0); // Inicia la animación de caracteres en 0
     };
 
-    // --- Lógica de Inicio y Limpieza ---
-    setLines([]); // Asegura que el estado esté limpio
-    setIsInputVisible(false);
-    typeLine(0); // Inicia la animación de líneas en 0
+    // Se difiere a un timer cancelable para no llamar setState de forma síncrona en el efecto
+    timerIdRef.current = setTimeout(() => typeLine(0), 0);
 
     // Función de limpieza: se ejecuta si el componente se "desmonta"
     return () => {

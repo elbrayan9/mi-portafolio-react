@@ -28,6 +28,7 @@ function Projects({ activeFilter }) {
       </div>
       {selectedProject && (
         <ProjectModal
+          key={selectedProject.title}
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
